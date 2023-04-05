@@ -8,4 +8,4 @@ services:
     volumes:
       - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
       - /var/lib/dhcp:/var/lib/dhcp
-    command: dhcpd -4 -f
+    command: dhcpd -4 -6 -f
