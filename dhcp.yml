@@ -4,9 +4,13 @@ services:
     image: networkboot/dhcpd:latest
     container_name: dhcp
     restart: always
-    network_mode: "wifi"
+    networks:
+      - wifi
     volumes:
       - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
       - /var/lib/dhcp:/var/lib/dhcp
     command: dhcpd -4 -f
-  
+
+networks:
+  wifi:
+    driver: bridge
