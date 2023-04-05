@@ -9,3 +9,8 @@ services:
       - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
       - /var/lib/dhcp:/var/lib/dhcp
     command: dhcpd -4 -6 -f
+    volumes:
+      - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
+      - ./dhcpd6.conf:/etc/dhcp/dhcpd6.conf
+      - /var/lib/dhcp:/var/lib/dhcp
+
