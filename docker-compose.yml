@@ -1,11 +1,6 @@
-version: '3.8'
+version: '3'
 services:
-  dhcp:
-    image: networkboot/dhcpd:latest
-    container_name: dhcp
-    restart: always
-    network_mode: "wifi"
-    volumes:
-      - ./dhcpd.conf:/etc/dhcp/dhcpd.conf
-      - /var/lib/dhcp:/var/lib/dhcp
-    command: dhcpd -4 -f
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
