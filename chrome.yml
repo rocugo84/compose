@@ -1,18 +1,18 @@
-version: '3'
+version: "3"
 services:
-  centos:
-    image: centos:7
-    command: /bin/bash -c "tail -f /dev/null"
-    tty: true
-    stdin_open: true
+  alvaro:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: alvaro
+    security_opt:
+      - seccomp=unconfined #opcional
     environment:
-      - DISPLAY
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Lisbon #alterado para Lisboa
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix
-      - ./start-chrome.sh:/usr/local/bin/start-chrome.sh
-    networks:
-      - gui-network
-
-networks:
-  gui-network:
-
+      - /var/etc/firefox
+    ports:
+      - "4000:4000"
+      - "4001:4001"
+    shm_size: "1gb"
+    restart: unless-stopped
