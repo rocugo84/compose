@@ -2,7 +2,7 @@
 
 version: '3' 
 service:
-  apps:
+  web:
     name: wordpress
     image: wordpress
     ports: 
