@@ -3,5 +3,5 @@ services:
   chrome:
     image: browserless/chrome
     ports:
-      - "4444:4444"
-      - "4095:4095"
+      - "3000:3000"
+      
