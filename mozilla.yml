@@ -10,7 +10,7 @@ services:
       - PGID=1000
       - TZ=Europe/Lisbon #alterado para Lisboa
     volumes:
-      - /path/to/config:/config
+      - /var/etc/firefox
     ports:
       - "3000:3000"
       - "3001:3001"
