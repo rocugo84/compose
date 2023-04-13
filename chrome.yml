@@ -1,16 +1,16 @@
 version: "3"
 services:
-  alvaro:
+  firefox2:
     image: lscr.io/linuxserver/firefox:latest
-    container_name: alvaro
+    container_name: firefox2
     security_opt:
       - seccomp=unconfined #opcional
     environment:
       - PUID=1001
-      - PGID=2002
+      - PGID=1001
       - TZ=Europe/Lisbon #alterado para Lisboa
     volumes:
-      - /var/etc/alvaro
+      - /var/etc/firefox
     ports:
       - "3002:3002"
       - "3003:3003"
