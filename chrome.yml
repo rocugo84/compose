@@ -10,7 +10,7 @@ services:
       - PGID=1000
       - TZ=Europe/Lisbon #alterado para Lisboa
     volumes:
-      - /var/etc/firefox
+      - /var/etc/alvaro
     ports:
       - "4000:4000"
       - "4001:4001"
