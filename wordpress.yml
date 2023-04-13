@@ -1,0 +1,11 @@
+#docker run --name meu-wordpress -p 8080:80 -d wordpress
+
+version: '3' 
+service:
+  apps:
+    name: wordpress
+    image: wordpress
+    ports: 
+          - 8080:8080
+
+ 
