@@ -1,7 +1,18 @@
 version: '3'
 services:
-  chrome:
-    image: browserless/chrome
-    ports:
-      - "3000:3000"
-      
+  centos:
+    image: centos:7
+    command: /bin/bash -c "tail -f /dev/null"
+    tty: true
+    stdin_open: true
+    environment:
+      - DISPLAY
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ./start-chrome.sh:/usr/local/bin/start-chrome.sh
+    networks:
+      - gui-network
+
+networks:
+  gui-network:
+
