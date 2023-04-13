@@ -6,8 +6,8 @@ services:
     security_opt:
       - seccomp=unconfined #opcional
     environment:
-      - PUID=2000
-      - PGID=2000
+      - PUID=1001
+      - PGID=2002
       - TZ=Europe/Lisbon #alterado para Lisboa
     volumes:
       - /var/etc/alvaro
