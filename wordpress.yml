@@ -1,6 +1,5 @@
 version: '3' 
 service:
-  apps:
     image: wordpress
     ports: 
           - 8080:8080
